@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajedrez :)</title>
+</head>
+<body>
+
+	<style type="text/css">
+		
+
+		body{
+			background: #f2f2f2;
+			text-align: center;
+		}
+
+		.tablero{
+
+			width: 500px;
+
+		}
+
+		.juego{
+
+			position: relative;
+
+			max-width: 500px;
+
+			margin: auto;
+
+		}
+
+		h1,h3{
+			font-family: "Lucida Console", Courier, monospace;
+		}
+
+		.pieza{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+
+
+
+
+
+
+		.torreBlanca1{
+
+			top: 422px;
+
+			left: 15px;
+
+		}
+
+		.caballoBlanco1{
+
+			top: 422px;
+
+			left: 75px;
+
+		}
+
+		.alfilBlanco1{
+
+			top: 422px;
+
+			left: 135px;
+
+		}
+
+		.reinaBlanca{
+
+			top: 422px;
+
+			left: 195px;
+
+		}
+
+		.reyBlanco{
+
+			top: 422px;
+
+			left: 255px;
+
+		}
+
+		.alfilBlanco2{
+
+			top: 422px;
+
+			left: 315px;
+
+		}
+
+		.caballoBlanco2{
+
+			top: 422px;
+
+			left: 375px;
+
+		}
+
+		.torreBlanca2{
+
+			top: 422px;
+
+			left: 435px;
+
+		}
+
+
+
+
+
+
+
+
+		.peonBlanco1{
+
+			top: 362px;
+
+			left: 15px;
+
+		}
+
+		.peonBlanco2{
+
+			top: 362px;
+
+			left: 75px;
+
+		}
+
+		.peonBlanco3{
+
+			top: 362px;
+
+			left: 135px;
+
+		}
+
+		.peonBlanco4{
+
+			top: 362px;
+
+			left: 195px;
+
+		}
+
+		.peonBlanco5{
+
+			top: 362px;
+
+			left: 255px;
+
+		}
+
+		.peonBlanco6{
+
+			top: 362px;
+
+			left: 315px;
+
+		}
+
+		.peonBlanco7{
+
+			top: 362px;
+
+			left: 375px;
+
+		}
+
+		.peonBlanco8{
+
+			top: 362px;
+
+			left: 435px;
+
+		}
+
+
+
+
+
+
+
+
+		.torreNegra1{
+
+			top: 6px;
+
+			left: 15px;
+
+		}
+
+		.caballoNegro1{
+
+			top: 6px;
+
+			left: 75px;
+
+		}
+
+		.alfilNegro1{
+
+			top: 6px;
+
+			left: 135px;
+
+		}
+
+		.reinaNegra{
+
+			top: 6px;
+
+			left: 195px;
+
+		}
+
+		.reyNegro{
+
+			top: 6px;
+
+			left: 255px;
+
+		}
+
+		.alfilNegro2{
+
+			top: 6px;
+
+			left: 315px;
+
+		}
+
+		.caballoNegro2{
+
+			top: 6px;
+
+			left: 375px;
+
+		}
+
+		.torreNegra2{
+
+			top: 6px;
+
+			left: 435px;
+
+		}
+
+
+
+
+
+
+
+
+		.peonNegro1{
+
+			top: 66px;
+
+			left: 15px;
+
+		}
+
+		.peonNegro2{
+
+			top: 66px;
+
+			left: 75px;
+
+		}
+
+		.peonNegro3{
+
+			top: 66px;
+
+			left: 135px;
+
+		}
+
+		.peonNegro4{
+
+			top: 66px;
+
+			left: 195px;
+
+		}
+
+		.peonNegro5{
+
+			top: 66px;
+
+			left: 255px;
+
+		}
+
+		.peonNegro6{
+
+			top: 66px;
+
+			left: 315px;
+
+		}
+
+		.peonNegro7{
+
+			top: 66px;
+
+			left: 375px;
+
+		}
+
+		.peonNegro8{
+
+			top: 66px;
+
+			left: 435px;
+
+		}
+
+
+
+
+	</style>
+
+
+	<h1>Ajedrez Online :)</h1>
+
+	<h3>Juega una partida online contra una AI</h3>
+
+	<div id="juego" class="juego">
+		
+		<img class="tablero" src="tablero01.png">
+
+
+
+
+		<img class="torreBlanca1 pieza" src="torreBlanca.png">
+
+		<img class="caballoBlanco1 pieza" src="caballoBlanco.png">
+
+		<img class="alfilBlanco1 pieza" src="alfilBlanco.png">
+
+		<img class="reinaBlanca pieza" src="reinaBlanca.png">
+
+		<img class="reyBlanco pieza" src="reyBlanco.png">
+
+		<img class="alfilBlanco2 pieza" src="alfilBlanco.png">
+
+		<img class="caballoBlanco2 pieza" src="caballoBlanco.png">
+
+		<img class="torreBlanca2 pieza" src="torreBlanca.png">
+
+
+
+		<img class="peonBlanco1 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco2 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco3 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco4 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco5 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco6 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco7 pieza" src="peonBlanco.png">
+
+		<img class="peonBlanco8 pieza" src="peonBlanco.png">
+
+
+
+		<img class="torreNegra1 pieza" src="torreNegra.png">
+
+		<img class="caballoNegro1 pieza" src="caballoNegro.png">
+
+		<img class="alfilNegro1 pieza" src="alfilNegro.png">
+
+		<img class="reinaNegra pieza" src="reinaNegra.png">
+
+		<img class="reyNegro pieza" src="reyNegro.png">
+
+		<img class="alfilNegro2 pieza" src="alfilNegro.png">
+
+		<img class="caballoNegro2 pieza" src="caballoNegro.png">
+
+		<img class="torreNegra2 pieza" src="torreNegra.png">
+
+
+
+		<img class="peonNegro1 pieza" src="peonNegro.png">
+
+		<img class="peonNegro2 pieza" src="peonNegro.png">
+
+		<img class="peonNegro3 pieza" src="peonNegro.png">
+
+		<img class="peonNegro4 pieza" src="peonNegro.png">
+
+		<img class="peonNegro5 pieza" src="peonNegro.png">
+
+		<img class="peonNegro6 pieza" src="peonNegro.png">
+
+		<img class="peonNegro7 pieza" src="peonNegro.png">
+
+		<img class="peonNegro8 pieza" src="peonNegro.png">
+
+
+	</div>
+
+
+	<script src= 
+	"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+	</script> 
+
+	<script type="text/javascript">
+		
+        var juego = document.getElementById("juego")
+
+        var x, y
+
+        let contador = 0
+
+        let casillaOrigen, casillaDestino
+
+
+		let columnaA = [ 
+		{"nombre":"a1", "pieza":"torreBlanca1", "top":"422px", "left":"15px"},
+		{"nombre":"a2", "pieza":"peonBlanco1", "top":"362px", "left":"15px"},
+		{"nombre":"a3", "pieza":"", "top":"302px", "left":"15px"},
+		{"nombre":"a4", "pieza":"", "top":"242px", "left":"15px"},
+		{"nombre":"a5", "pieza":"", "top":"182px", "left":"15px"},
+		{"nombre":"a6", "pieza":"", "top":"122px", "left":"15px"},
+		{"nombre":"a7", "pieza":"peonNegro1", "top":"66px", "left":"15px"},
+		{"nombre":"a8", "pieza":"torreNegra1", "top":"6px", "left":"15px"}]
+
+		let columnaB = [ 
+		{"nombre":"b1", "pieza":"caballoBlanco1", "top":"422px", "left":"75px"},
+		{"nombre":"b2", "pieza":"peonBlanco2", "top":"362px", "left":"75px"},
+		{"nombre":"b3", "pieza":"", "top":"302px", "left":"75px"},
+		{"nombre":"b4", "pieza":"", "top":"242px", "left":"75px"},
+		{"nombre":"b5", "pieza":"", "top":"182px", "left":"75px"},
+		{"nombre":"b6", "pieza":"", "top":"122px", "left":"75px"},
+		{"nombre":"b7", "pieza":"peonNegro2", "top":"66px", "left":"75px"},
+		{"nombre":"b8", "pieza":"caballoNegro1", "top":"6px", "left":"75px"}]
+
+		let columnaC = [ 
+		{"nombre":"c1", "pieza":"alfilBlanco1", "top":"422px", "left":"135px"},
+		{"nombre":"c2", "pieza":"peonBlanco3", "top":"362px", "left":"135px"},
+		{"nombre":"c3", "pieza":"", "top":"302px", "left":"135px"},
+		{"nombre":"c4", "pieza":"", "top":"242px", "left":"135px"},
+		{"nombre":"c5", "pieza":"", "top":"182px", "left":"135px"},
+		{"nombre":"c6", "pieza":"", "top":"122px", "left":"135px"},
+		{"nombre":"c7", "pieza":"peonNegro3", "top":"66px", "left":"135px"},
+		{"nombre":"c8", "pieza":"alfilNegro1", "top":"6px", "left":"135px"}]
+
+		let columnaD = [ 
+		{"nombre":"d1", "pieza":"reinaBlanca", "top":"422px", "left":"195px"},
+		{"nombre":"d2", "pieza":"peonBlanco4", "top":"362px", "left":"195px"},
+		{"nombre":"d3", "pieza":"", "top":"302px", "left":"195px"},
+		{"nombre":"d4", "pieza":"", "top":"242px", "left":"195px"},
+		{"nombre":"d5", "pieza":"", "top":"182px", "left":"195px"},
+		{"nombre":"d6", "pieza":"", "top":"122px", "left":"195px"},
+		{"nombre":"d7", "pieza":"peonNegro4", "top":"66px", "left":"195px"},
+		{"nombre":"d8", "pieza":"reinaNegra", "top":"6px", "left":"195px"}]
+
+		let columnaE = [ 
+		{"nombre":"e1", "pieza":"reyBlanco", "top":"422px", "left":"255px"},
+		{"nombre":"e2", "pieza":"peonBlanco5", "top":"362px", "left":"255px"},
+		{"nombre":"e3", "pieza":"", "top":"302px", "left":"255px"},
+		{"nombre":"e4", "pieza":"", "top":"242px", "left":"255px"},
+		{"nombre":"e5", "pieza":"", "top":"182px", "left":"255px"},
+		{"nombre":"e6", "pieza":"", "top":"122px", "left":"255px"},
+		{"nombre":"e7", "pieza":"peonNegro5", "top":"66px", "left":"255px"},
+		{"nombre":"e8", "pieza":"reyNegro", "top":"6px", "left":"255px"}]
+
+
+		let columnaF = [ 
+		{"nombre":"f1", "pieza":"alfilBlanco2", "top":"422px", "left":"315px"},
+		{"nombre":"f2", "pieza":"peonBlanco6", "top":"362px", "left":"315px"},
+		{"nombre":"f3", "pieza":"", "top":"302px", "left":"315px"},
+		{"nombre":"f4", "pieza":"", "top":"242px", "left":"315px"},
+		{"nombre":"f5", "pieza":"", "top":"182px", "left":"315px"},
+		{"nombre":"f6", "pieza":"", "top":"122px", "left":"315px"},
+		{"nombre":"f7", "pieza":"peonNegro6", "top":"66px", "left":"315px"},
+		{"nombre":"f8", "pieza":"alfilNegro2", "top":"6px", "left":"315px"}]
+
+		let columnaG = [ 
+		{"nombre":"g1", "pieza":"caballoBlanco2", "top":"422px", "left":"375px"},
+		{"nombre":"g2", "pieza":"peonBlanco7", "top":"362px", "left":"375px"},
+		{"nombre":"g3", "pieza":"", "top":"302px", "left":"375px"},
+		{"nombre":"g4", "pieza":"", "top":"242px", "left":"375px"},
+		{"nombre":"g5", "pieza":"", "top":"182px", "left":"375px"},
+		{"nombre":"g6", "pieza":"", "top":"122px", "left":"375px"},
+		{"nombre":"g7", "pieza":"peonNegro7", "top":"66px", "left":"375px"},
+		{"nombre":"g8", "pieza":"caballoNegro2", "top":"6px", "left":"375px"}]
+
+		let columnaH = [ 
+		{"nombre":"h1", "pieza":"torreBlanca2", "top":"422px", "left":"435px"},
+		{"nombre":"h2", "pieza":"peonBlanco8", "top":"362px", "left":"435px"},
+		{"nombre":"h3", "pieza":"", "top":"302px", "left":"435px"},
+		{"nombre":"h4", "pieza":"", "top":"242px", "left":"435px"},
+		{"nombre":"h5", "pieza":"", "top":"182px", "left":"435px"},
+		{"nombre":"h6", "pieza":"", "top":"122px", "left":"435px"},
+		{"nombre":"h7", "pieza":"peonNegro8", "top":"66px", "left":"435px"},
+		{"nombre":"h8", "pieza":"torreNegra2", "top":"6px", "left":"435px"}]
+
+
+        let columnas = [columnaA,columnaB,columnaC,columnaD,columnaE,columnaF,columnaG,columnaH]
+
+
+		let mueveBlanco = true
+
+
+		let movimientos = ""
+
+
+
+
+        $('#juego').click(function(e) { 
+
+            var elemento = $(this)
+
+            x = e.pageX - elemento.offset().left
+  
+
+            y = e.pageY - elemento.offset().top 
+
+
+            let columnaArray
+
+			switch (columna()) {
+				case 'a':
+				    columnaArray = columnaA
+				    break;
+				case 'b':
+				    columnaArray = columnaB
+				    break;
+				case 'c':
+				    columnaArray = columnaC
+				    break;
+				case 'd':
+				    columnaArray = columnaD
+				    break;
+				case 'e':
+				    columnaArray = columnaE
+				    break;
+				case 'f':
+				    columnaArray = columnaF
+				    break;
+				case 'g':
+				    columnaArray = columnaG
+				    break;
+				case 'h':
+				    columnaArray = columnaH
+				    break;
+			}
+
+
+            if(contador == 2 || contador == 0){
+
+
+            	if((getColor(columnaArray[parseInt(fila())-1].pieza)=="Blanco") && mueveBlanco){
+
+
+	            	casillaOrigen = columnaArray[parseInt(fila())-1]
+
+	            	contador = 1
+
+
+            	}
+
+
+            }else{
+
+
+            	casillaDestino = columnaArray[parseInt(fila())-1]
+
+
+            	let moveAux
+
+				moveAux = movimientos.concat(casillaOrigen.nombre).concat(casillaDestino.nombre)
+
+				fetch("http://chess-api.herokuapp.com/valid_move/"+moveAux)
+				.then((resp) => resp.json()) 
+				.then(function(data){
+
+					contador = 2
+
+					if(data.validMove){
+
+
+						if((casillaOrigen.nombre=="e1")&&(casillaDestino.nombre=="g1")){
+
+				            document.getElementsByClassName("torreBlanca2")[0].style.left = columnaF[0].left
+
+				            document.getElementsByClassName("torreBlanca2")[0].style.top = columnaF[0].top
+
+				            columnaH[0].pieza=""
+
+				            columnaF[0].pieza="torreBlanca2"
+
+
+						}
+
+						if((casillaOrigen.nombre=="e1")&&(casillaDestino.nombre=="c1")){
+
+				            document.getElementsByClassName("torreBlanca1")[0].style.left = columnaD[0].left
+
+				            document.getElementsByClassName("torreBlanca1")[0].style.top = columnaD[0].top
+
+				            columnaA[0].pieza=""
+
+				            columnaD[0].pieza="torreBlanca1"
+
+
+						}
+
+			            document.getElementsByClassName(casillaOrigen.pieza)[0].style.left = casillaDestino.left
+
+			            document.getElementsByClassName(casillaOrigen.pieza)[0].style.top = casillaDestino.top
+
+						if(!(casillaDestino.pieza=="")){
+
+							document.getElementsByClassName(casillaDestino.pieza)[0].style.display = "none"
+
+						}
+
+			            casillaDestino.pieza = casillaOrigen.pieza
+
+			            casillaOrigen.pieza = ""
+
+			            mueveBlanco = false
+
+
+						movimientos = movimientos.concat(casillaOrigen.nombre)
+
+						movimientos = movimientos.concat(casillaDestino.nombre)
+
+
+						informarStatus()
+
+
+			            mueveNegro()
+
+					}else{
+
+						alert("Movimiento invalido")
+
+					}
+
+				})
+
+
+
+            }
+
+
+
+
+        }); 
+
+
+        function informarStatus(){
+
+				fetch("http://chess-api.herokuapp.com/status/"+movimientos)
+				.then((resp) => resp.json()) 
+				.then(function(data){
+
+					console.log(data.gameStatus)
+					
+					switch (data.gameStatus) {
+
+					  case 'white_won':
+					    alert('Gano el blanco');
+					    break;
+					  case 'black_won':
+					    alert('Gano el negro');
+					    break;
+					  case 'stalemate':
+					  case 'insufficient_material':
+					  case 'fifty_rule_move':
+					  case 'threefold_repitition':
+					    alert('Empate');
+					    break;
+
+					}
+
+
+
+				})
+
+        }
+
+
+        function getCasilla(nombre){
+
+
+			let x;
+
+			for (x of columnaA) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaB) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaC) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaD) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaE) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaF) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaG) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+			for (x of columnaH) {
+
+				if(x.nombre==nombre){
+
+					return x
+				}
+
+			}
+
+
+
+
+        }
+
+
+        function mueveNegro(){
+
+
+
+			fetch("http://chess-api.herokuapp.com/next_best/"+movimientos)
+			.then((resp) => resp.json()) 
+			.then(function(data) {
+
+
+					movimientos = movimientos.concat(data.bestNext)
+
+					let casillaInicial = getCasilla(data.bestNext.substring(0, 2))
+
+					let casillaFinal = getCasilla(data.bestNext.substring(2))
+
+					if((casillaInicial.nombre=="e8")&&(casillaFinal.nombre=="g8")){
+
+				           document.getElementsByClassName("torreNegra2")[0].style.left = columnaF[7].left
+
+				           document.getElementsByClassName("torreNegra2")[0].style.top = columnaF[7].top
+
+				           columnaH[7].pieza=""
+
+				           columnaF[7].pieza="torreNegra2"
+
+				           console.log("enroque corto negro")
+
+
+					}
+
+					if((casillaInicial.nombre=="e8")&&(casillaFinal.nombre=="c8")){
+
+				           document.getElementsByClassName("torreNegra1")[0].style.left = columnaD[7].left
+
+				           document.getElementsByClassName("torreNegra1")[0].style.top = columnaD[7].top
+
+				           columnaA[7].pieza=""
+
+				           columnaD[7].pieza="torreNegra1"
+
+				           console.log("enroque largo negro")
+
+
+					}
+
+		            document.getElementsByClassName(casillaInicial.pieza)[0].style.left = casillaFinal.left
+
+		            document.getElementsByClassName(casillaInicial.pieza)[0].style.top = casillaFinal.top
+
+					if(!(casillaFinal.pieza=="")){
+
+						document.getElementsByClassName(casillaFinal.pieza)[0].style.display = "none"
+
+					}
+
+		            let x
+
+
+					for (x of columnas) {
+
+						for (y of x) {
+
+							if(y.nombre==casillaFinal.nombre){
+
+								y.pieza=casillaInicial.pieza
+
+							}
+
+						}
+
+					}
+
+
+					for (x of columnas) {
+
+						for (y of x) {
+
+							if(y.nombre==casillaInicial.nombre){
+
+								y.pieza=""
+							}
+
+						}
+
+					}
+
+
+					mueveBlanco = true
+
+
+					informarStatus()
+
+
+
+			})
+
+
+
+        }
+
+
+        function getColor(pieza){
+
+        	let piezasBlancas = ["torreBlanca1","peonBlanco1","caballoBlanco1","peonBlanco2","alfilBlanco1","peonBlanco3","reinaBlanca","peonBlanco4","reyBlanco","peonBlanco5","alfilBlanco2","peonBlanco6","caballoBlanco2","peonBlanco7","torreBlanca2",
+        	"peonBlanco8"]
+
+        	let piezasNegras = ["torreNegra1","peonNegro1","caballoNegro1","peonNegro2","alfilNegro1","peonNegro3","reinaNegra","peonNegro4","reyNegro","peonNegro5","alfilNegro2","peonNegro6","caballoNegro2","peonNegro7","torreNegra2",
+        	"peonNegro8"]
+
+			let x;
+
+			for (x of piezasBlancas) {
+
+				if(x==pieza){
+
+					return "Blanco"
+				}
+
+			}
+
+			for (x of piezasNegras) {
+
+				if(x==pieza){
+
+					return "Negro"
+				}
+
+			}
+
+			return "Nada"
+
+        }
+
+
+        function columna(){
+
+	        let columna
+
+
+	        if(x > 438.5 && x < 498.5 ){
+
+	        	columna = "h"
+
+	        }
+
+	        if(x > 378.5 && x < 438.5 ){
+
+	        	columna = "g"
+
+	        }
+
+	        if(x > 318.5 && x < 378.5  ){
+
+	        	columna = "f"
+
+	        }
+
+	        if(x > 258.5 && x < 318.5 ){
+
+	        	columna = "e"
+
+	        }
+
+	        if(x > 198.5 && x < 258.5 ){
+
+	        	columna = "d"
+
+	        }
+
+	        if(x > 138.5 && x < 198.5 ){
+
+	        	columna = "c"
+
+	        }
+
+	        if(x > 78.5 && x < 138.5 ){
+
+	        	columna = "b"
+
+	        }
+
+	        if(x > 18.5 && x < 78.5 ){
+
+	        	columna = "a"
+
+	        }
+
+	 		return columna
+        }
+
+
+        function fila(){
+
+	        let fila
+
+
+	        if(y > 8.4 && y < 65.4 ){
+
+	        	fila = "8"
+
+	        }
+
+	        if(y > 65.4 && y < 125.4 ){
+
+	        	fila = "7"
+
+	        }
+
+	        if(y > 125.4 && y < 185.4 ){
+
+	        	fila = "6"
+
+	        }
+
+	        if(y > 185.4 && y < 245.4 ){
+
+	        	fila = "5"
+
+	        }
+
+	        if(y > 245.4 && y < 305.4 ){
+
+	        	fila = "4"
+
+	        }
+
+	        if(y > 305.4 && y < 365.4 ){
+
+	        	fila = "3"
+
+	        }
+
+	        if(y > 365.4 && y < 425.4 ){
+
+	        	fila = "2"
+
+	        }
+
+	        if(y > 425.4 && y < 485.4 ){
+
+	        	fila = "1"
+
+	        }
+
+	 		return fila
+        }
+
+
+
+
+
+	</script>
+
+</body>
+</html>
