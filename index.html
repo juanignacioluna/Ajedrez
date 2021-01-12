@@ -585,7 +585,7 @@
 
 				moveAux = movimientos.concat(casillaOrigen.nombre).concat(casillaDestino.nombre)
 
-				fetch("http://chess-api.herokuapp.com/valid_move/"+moveAux)
+				fetch("https://chess-api.herokuapp.com/valid_move/"+moveAux)
 				.then((resp) => resp.json()) 
 				.then(function(data){
 
@@ -784,7 +784,7 @@
 
 
 
-			fetch("http://chess-api.herokuapp.com/next_best/"+movimientos)
+			fetch("https://chess-api.herokuapp.com/next_best/"+movimientos)
 			.then((resp) => resp.json()) 
 			.then(function(data) {
 
